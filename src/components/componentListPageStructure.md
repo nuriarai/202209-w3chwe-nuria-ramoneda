@@ -1,4 +1,4 @@
-# Components of Pokemon List Page
+# Pokemon List Page components
 
 ## App
 
