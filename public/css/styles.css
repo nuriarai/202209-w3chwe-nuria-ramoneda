@@ -1,0 +1,54 @@
+:root {
+  --main-color: #ffcb05;
+  --contrast-color: #3c7dca;
+  --secondary-color: #003a70;
+}
+
+body {
+  margin: 0;
+  font-family: "Fuzzy Bubbles", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  padding: 10px;
+}
+
+.pokemon {
+  display: flex;
+  margin-bottom: 20px;
+  max-width: 420px;
+}
+
+.pokemon__name {
+  border-bottom: 1px dotted var(--secondary-color);
+  margin-bottom: 0.6rem;
+  padding-bottom: 2px;
+  color: var(--secondary-color);
+}
+
+.pokemon:nth-child(even) {
+  background-color: var(--main-color);
+}
+.pokemon:nth-child(odd) {
+  background-color: var(--contrast-color);
+}
+
+.pokemon__height,
+.pokemon__weight,
+.pokemon__base-experience {
+  font-weight: bold;
+}
+
+.pokemon__height span,
+.pokemon__weight span,
+.pokemon__base-experience span {
+  font-weight: 400;
+  padding: 0 10px 0 6px;
+}
