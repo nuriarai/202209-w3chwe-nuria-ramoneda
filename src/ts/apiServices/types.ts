@@ -2,22 +2,17 @@ export interface PokemonsStructure {
   count: number;
   next: string;
   previous: string;
-  results: [{ name: string; url: string }];
+  results: Array<{ name: string; url: string }>;
 }
 
-export interface PokemonStructure {
-  abilities: [
-    {
-      ability: {
-        name: string;
-        url: string;
-      };
-      is_hidden: boolean;
-      slot: number;
-    }
-  ];
+export interface PokemonApiStructure {
+  abilities: Array<{
+    ability: {
+      name: string;
+      url: string;
+    };
+  }>;
   base_experience: number;
-  forms: [name: string, url: string];
   height: number;
   id: number;
   name: string;
@@ -27,3 +22,13 @@ export interface PokemonStructure {
   };
   weight: number;
 }
+
+export interface PokemonFullStructure extends PokemonApiStructure {
+  baseExperience: number;
+  image: string;
+}
+
+export type PokemonStructure = Omit<
+  PokemonFullStructure,
+  "base_experience" | "sprites"
+>;
