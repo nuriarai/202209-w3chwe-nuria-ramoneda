@@ -11,7 +11,7 @@
 
 ### Show data
 
-- The Title "Pokemons List" inside an h1
+- The Title received inside an h1
 
 ## PokemonsListWrapper
 
