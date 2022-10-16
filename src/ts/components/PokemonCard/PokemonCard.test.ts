@@ -41,5 +41,14 @@ describe("Given a Pokemon component", () => {
 
       expect(screen.textContent).toContain(experienceText);
     });
+
+    test("Then it should show the text 'Height: 9", () => {
+      const pokemonCard = new PokemonCard(screen, pokemon);
+      pokemonCard.render();
+
+      const heightText = `Height: ${pokemon.height}`;
+
+      expect(screen.textContent).toContain(heightText);
+    });
   });
 });
