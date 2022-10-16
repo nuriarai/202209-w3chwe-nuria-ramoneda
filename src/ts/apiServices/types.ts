@@ -1,4 +1,4 @@
-export interface PokemonsStructure {
+export interface PokemonsApiStructure {
   count: number;
   next: string;
   previous: string;
@@ -6,29 +6,12 @@ export interface PokemonsStructure {
 }
 
 export interface PokemonApiStructure {
-  abilities: Array<{
-    ability: {
-      name: string;
-      url: string;
-    };
-  }>;
+  name: string;
+  id: number;
   base_experience: number;
   height: number;
-  id: number;
-  name: string;
-  order: number;
+  weight: number;
   sprites: {
     front_default: string;
   };
-  weight: number;
 }
-
-export interface PokemonFullStructure extends PokemonApiStructure {
-  baseExperience: number;
-  image: string;
-}
-
-export type PokemonStructure = Omit<
-  PokemonFullStructure,
-  "base_experience" | "sprites"
->;
