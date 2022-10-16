@@ -16,11 +16,11 @@ describe("Given a Pokemon component", () => {
       abilities: [],
       baseExperience: 7,
       height: 9,
-      id: 2,
+      id: 25,
       name: "Pikachu",
       order: 2,
       image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
       weight: 6,
     };
 
@@ -49,6 +49,15 @@ describe("Given a Pokemon component", () => {
       const heightText = `Height: ${pokemon.height}`;
 
       expect(screen.textContent).toContain(heightText);
+    });
+
+    test("Then it shoud show the image of Pikachu", () => {
+      const pokemonCard = new PokemonCard(screen, pokemon);
+      pokemonCard.render();
+
+      const image = screen.querySelector("img");
+
+      expect(image.src).toBe(pokemon.image);
     });
   });
 });
