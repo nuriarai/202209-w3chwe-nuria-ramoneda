@@ -29,6 +29,7 @@ class PokemonCard extends Component {
         <span class="pokemon__height">Height: <span>${height}</span></span>
         <span class="pokemon__weight">Weight: <span>${weight}</span></span>
       </div>
+      <div class="pokemon__actions"></div>
     `;
   }
 }

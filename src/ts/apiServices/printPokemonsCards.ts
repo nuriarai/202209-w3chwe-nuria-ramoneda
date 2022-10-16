@@ -1,3 +1,4 @@
+import Button from "../components/Button/Button.js";
 import Component from "../components/Component/Component.js";
 import PokemonCard from "../components/PokemonCard/PokemonCard.js";
 import getPokemonList from "./getPokemonList.js";
@@ -23,6 +24,24 @@ const printPokemonCards = async (
     const pokemonData = (await response.json()) as PokemonApiStructure;
     const pokemonCard = new PokemonCard(parentElement, pokemonData);
     pokemonCard.render();
+
+    const pokemonActions: HTMLElement =
+      pokemonCard.domElement.querySelector(".pokemon__actions");
+    const button = new Button(
+      pokemonActions,
+      "button__action--add",
+      "button",
+      "Add to favs"
+    );
+    button.render();
+
+    const buttonDelete = new Button(
+      pokemonActions,
+      "button__action--delete",
+      "button",
+      "Delete"
+    );
+    buttonDelete.render();
   });
 };
 

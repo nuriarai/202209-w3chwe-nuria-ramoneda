@@ -18,12 +18,14 @@ a {
 
 .app {
   padding: 10px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .pokemon {
   display: flex;
   margin-bottom: 20px;
-  max-width: 480px;
+  padding: 20px 20px 20px 5px;
 }
 
 .pokemon__data {
@@ -63,4 +65,25 @@ a {
 .pokemon__base-experience span {
   font-weight: 400;
   padding: 0 10px 0 6px;
+}
+
+.pokemon__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pokemon__actions button {
+  width: 90px;
+  height: 30px;
+  font-size: 14px;
+  background-color: #bfd9f2;
+  border-radius: 20px;
+  border: 1px solid var(--secondary-color);
+}
+
+@media screen and (min-width: 601px) {
+  .app {
+    max-width: 600px;
+  }
 }
