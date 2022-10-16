@@ -23,12 +23,17 @@ a {
 .pokemon {
   display: flex;
   margin-bottom: 20px;
-  max-width: 420px;
+  max-width: 480px;
+}
+
+.pokemon__data {
+  padding: 15px 10px 10px 5px;
+  width: 100%;
 }
 
 .pokemon__name {
   border-bottom: 1px dotted var(--secondary-color);
-  margin-bottom: 0.6rem;
+  margin: 0 0 12px 0;
   padding-bottom: 2px;
   color: var(--secondary-color);
 }
@@ -38,6 +43,13 @@ a {
 }
 .pokemon:nth-child(odd) {
   background-color: var(--contrast-color);
+}
+
+.pokemon:nth-child(odd) .pokemon__name {
+  color: var(--main-color);
+}
+.pokemon:nth-child(even) .pokemon__name {
+  color: var(--contrast-color);
 }
 
 .pokemon__height,
