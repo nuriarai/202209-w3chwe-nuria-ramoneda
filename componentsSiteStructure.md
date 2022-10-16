@@ -25,10 +25,12 @@
 
 ### Show data
 
-- The total number of existing pokemons
-- The number of pokemons showed in this page
-- A button to next page
-- A button to previous page
+- In one block:
+  - The total number of existing pokemons
+  - The number of pokemons showed in this page
+- In second block:
+  - A button to next page
+  - A button to previous page
 
 ### Get actions:
 
