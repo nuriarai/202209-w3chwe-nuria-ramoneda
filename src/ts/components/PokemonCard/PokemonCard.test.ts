@@ -48,13 +48,14 @@ describe("Given a Pokemon component", () => {
       expect(screen.textContent).toContain(heightText);
     });
 
-    test("Then it shoud show the image of Pikachu", () => {
+    test("Then it shoud show the image of Pikachu and the alt text with pokemon name", () => {
       const pokemonCard = new PokemonCard(screen, pokemon);
       pokemonCard.render();
 
       const image = screen.querySelector("img");
 
       expect(image.src).toBe(pokemon.sprites.front_default);
+      expect(image.alt).toBe(pokemon.name);
     });
   });
 });
