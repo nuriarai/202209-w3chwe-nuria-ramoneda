@@ -3,6 +3,7 @@ import printPokemonCards from "./apiServices/printPokemonsCards.js";
 import type { PokemonApiStructure } from "./apiServices/types.js";
 import App from "./components/App/App.js";
 import Header from "./components/Header/Header.js";
+import Pagination from "./components/Pagination/Pagination.js";
 import PokemonCard from "./components/PokemonCard/PokemonCard.js";
 
 const parentElement: HTMLElement = document.querySelector(".root");
@@ -13,19 +14,7 @@ const headerParent: HTMLElement = document.querySelector(".app");
 const header = new Header(headerParent, "Pokemon's List");
 header.render();
 
-const pokemon: PokemonApiStructure = {
-  ["base_experience"]: 7,
-  height: 9,
-  id: 25,
-  name: "Pikachu",
-  sprites: {
-    ["front_default"]:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-  },
-  weight: 6,
-};
-const pokemonCardParent: HTMLElement = document.querySelector(".app");
-const pokemonCard = new PokemonCard(pokemonCardParent, pokemon);
-pokemonCard.render();
+await printPokemonCards(headerParent, 60, 60);
 
-await printPokemonCards(pokemonCardParent, 100, 100);
+const pagination = new Pagination(headerParent);
+await pagination.render();
