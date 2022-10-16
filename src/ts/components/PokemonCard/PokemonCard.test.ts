@@ -10,12 +10,12 @@ beforeEach(() => {
 describe("Given a Pokemon component", () => {
   describe("When it's rendered with Pikachu data", () => {
     const pokemon: PokemonApiStructure = {
-      ["base_experience"]: 7,
+      base_experience: 7,
       height: 9,
       id: 25,
       name: "Pikachu",
       sprites: {
-        ["front_default"]:
+        front_default:
           "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
       },
       weight: 6,
@@ -48,13 +48,14 @@ describe("Given a Pokemon component", () => {
       expect(screen.textContent).toContain(heightText);
     });
 
-    test("Then it shoud show the image of Pikachu", () => {
+    test("Then it shoud show the image of Pikachu and the alt text with pokemon name", () => {
       const pokemonCard = new PokemonCard(screen, pokemon);
       pokemonCard.render();
 
       const image = screen.querySelector("img");
 
       expect(image.src).toBe(pokemon.sprites.front_default);
+      expect(image.alt).toBe(pokemon.name);
     });
   });
 });
