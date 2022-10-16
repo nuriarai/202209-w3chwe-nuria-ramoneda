@@ -32,5 +32,14 @@ describe("Given a Pokemon component", () => {
 
       expect(title.textContent).toBe(pokemon.name);
     });
+
+    test("Then it should show the text 'Experience: 7'", () => {
+      const pokemonCard = new PokemonCard(screen, pokemon);
+      pokemonCard.render();
+
+      const experienceText = `Experience: ${pokemon.baseExperience}`;
+
+      expect(screen.textContent).toContain(experienceText);
+    });
   });
 });
