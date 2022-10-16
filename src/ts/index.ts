@@ -1,10 +1,6 @@
 import getPokemonList from "./apiServices/getPokemonList.js";
 import printPokemonCards from "./apiServices/printPokemonsCards.js";
-import type {
-  PokemonApiStructure,
-  PokemonsApiStructure,
-  PokemonStructure,
-} from "./apiServices/types.js";
+import type { PokemonApiStructure } from "./apiServices/types.js";
 import App from "./components/App/App.js";
 import Header from "./components/Header/Header.js";
 import PokemonCard from "./components/PokemonCard/PokemonCard.js";

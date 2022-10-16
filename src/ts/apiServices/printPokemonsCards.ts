@@ -1,10 +1,6 @@
 import PokemonCard from "../components/PokemonCard/PokemonCard.js";
 import getPokemonList from "./getPokemonList.js";
-import type {
-  PokemonApiStructure,
-  PokemonFullStructure,
-  PokemonStructure,
-} from "./types";
+import type { PokemonApiStructure } from "./types";
 
 const printPokemonCards = async (
   parentElement: HTMLElement,
